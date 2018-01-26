@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ParametresComponent } from './parametres/parametres.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  declarations: []
+  declarations: [ParametresComponent]
 })
 export class HomeModule { }
