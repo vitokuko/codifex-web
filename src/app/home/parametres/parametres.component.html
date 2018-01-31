@@ -1,3 +1,164 @@
-<p>
-  parametres works!
-</p>
+<form class="form">
+  <div class="form-body">
+    <h4 class="form-section">
+      <i class="icon-head"></i> Informations Personnelles </h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput1">First Name</label>
+          <input type="text" id="projectinput1" class="form-control" placeholder="First Name" name="fname">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput2">Last Name</label>
+          <input type="text" id="projectinput2" class="form-control" placeholder="Last Name" name="lname">
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-actions right">
+        <button type="submit" class="btn btn-primary"><a [routerLink]="['/home/modifier']">
+          <i class="icon-ei-pencil"></i> Modifier </a>
+        </button> 
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="projectinput3">Date de naissance</label>
+            <input type="text" id="projectinput3" class="form-control" placeholder="Date de naissance" name="date de naissance">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="projectinput4">Lieu de naissance</label>
+            <input type="text" id="projectinput4" class="form-control" placeholder="Lieu de naissance" name="lieu de naissance">
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-actions right">
+          <button type="submit" class="btn btn-primary"><a [routerLink]="['/home/modifier']">
+            <i class="icon-ei-pencil"></i> Modifier </a>
+          </button> 
+      </div>
+  
+
+   
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput3">E-mail</label>
+          <input type="text" id="projectinput3" class="form-control" placeholder="E-mail" name="email">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput4">Contact Number</label>
+          <input type="text" id="projectinput4" class="form-control" placeholder="Phone" name="phone">
+        </div>
+      </div>
+     
+    </div>
+    <div class="form-actions right">
+        <button type="submit" class="btn btn-primary"><a [routerLink]="['/home/modifier']">
+          <i class="icon-ei-pencil"></i> Modifier </a>
+        </button> 
+    </div>
+
+
+
+    <div class="form-body">
+      <h4 class="form-section"><i class="icon-camera5"></i> Photo profil</h4>
+      <div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <img _ngcontent-c1="" alt="online campus"  data-collapse="../../assets/app-assets/images/logo/pp.jpg" data-expand="../../assets/app-assets/images/logo/pp.jpg" src="../../assets/app-assets/images/logo/pp.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions right">
+      <button type="submit" class="btn btn-primary"><a [routerLink]="['/home/modifier']">
+        <i class="icon-ei-pencil"></i> Modifier </a>
+      </button> 
+  </div>
+
+</form>
+
+<form class="form">
+  <div class="form-body">
+    <h4 class="form-section">
+      <i class="icon-university2"></i>Informations sur la formation</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput3">Departement</label>
+          <select id="projectinput5" name="interested" class="form-control">
+            <option value="none" selected="" disabled="">Choix</option>
+            <option value="design">Genie Informatique</option>
+            <option value="development">Genie Civil</option>
+            <option value="illustration">Genie Mecanique</option>
+            <option value="branding">Genie Chimique</option>
+            <option value="video">Genie Electrique</option>
+            <option value="video">Gestion</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput4">Option</label>
+          <select id="projectinput5" name="interested" class="form-control">
+            <option value="none" selected="" disabled="">Choix</option>
+            <option value="design">Informatique</option>
+            <option value="development">Telecoms et reseaux</option>
+            <option value="illustration">Industrie alimantaire</option>
+            <option value="branding">Biologie appliquee</option>
+            <option value="video">video</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions right">
+        <button type="submit" class="btn btn-primary"><a [routerLink]="['/home/modifier']">
+          <i class="icon-ei-pencil"></i> Modifier </a>
+        </button> 
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput3">Cycle</label>
+          <select id="projectinput5" name="interested" class="form-control">
+            <option value="none" selected="" disabled="">Choix</option>
+            <option value="design">DIC</option>
+            <option value="development">DUT</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="projectinput4">Annee d'etude</label>
+          <select id="projectinput5" name="interested" class="form-control">
+            <option value="none" selected="" disabled="">Choix</option>
+            <option value="design">Premiere annee</option>
+            <option value="development">Deuxiemme annee</option>
+            <option value="development">Troisieme annee</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions right">
+        <button type="submit" class="btn btn-primary"><a [routerLink]="['/home/modifier']">
+          <i class="icon-ei-pencil"></i> Modifier </a>
+        </button> 
+    </div>
+
+  </div>
+</form>
