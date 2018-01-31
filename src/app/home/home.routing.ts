@@ -6,6 +6,11 @@ import {NgModule} from "@angular/core";
 import {HomeComponent} from "./home.component";
 import { Component } from "@angular/core/src/metadata/directives";
 import { ParametresComponent } from "./parametres/parametres.component";
+import {AccueilComponent} from "./accueil/accueil.component";
+import {CodifierComponent} from "./codifier/codifier.component";
+import {ReserverComponent} from "./reserver/reserver.component";
+import { AidesComponent } from "./aides/aides.component";
+import { ModifierComponent } from "./modifier/modifier.component";
 /**
  * Created by souaibou on 5/9/17.
  */
@@ -16,9 +21,30 @@ const HOME_ROUTES : Routes =[
     children : [
       {
         path: 'parametres',
-        component: ParametresComponent
+        component: ParametresComponent,
+        
+      },
+      {
+        path: 'accueil',
+        component: AccueilComponent
+      },
+      {
+        path: 'codifier',
+        component: CodifierComponent
+      },
+      {
+        path: 'reserver',
+        component: ReserverComponent,
+      },
+      {
+        path: 'aides',
+        component: AidesComponent
+      },
+      {
+        path : 'modifier',
+        component : ModifierComponent
       }
-
+      
     ]
   }
 
