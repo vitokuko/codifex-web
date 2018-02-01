@@ -2,14 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HomeRouting} from "./home.routing";
 import { AccueilComponent } from './accueil/accueil.component';
-import { CodifierComponent } from './codifier/codifier.component';
-import { ReserverComponent } from './reserver/reserver.component';
+import { ReserverComponent } from './codification/reserver.component';
+import {HttpModule} from "@angular/http";
+import {ToasterModule} from "angular2-toaster";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   imports: [
     CommonModule,
-    HomeRouting
+    HomeRouting,
+    HttpModule,
+    ToasterModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
   ],
-  declarations: [AccueilComponent, CodifierComponent, ReserverComponent]
+  declarations: [AccueilComponent, ReserverComponent]
 })
 export class HomeModule { }
