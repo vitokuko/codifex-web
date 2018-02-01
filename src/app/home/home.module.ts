@@ -8,8 +8,6 @@ import { ReserverComponent } from './codification/reserver.component';
 import {HttpModule} from "@angular/http";
 import {ToasterModule} from "angular2-toaster";
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
-import { CodifierComponent } from './codifier/codifier.component';
-import { ReserverComponent } from './reserver/reserver.component';
 import { AidesComponent } from './aides/aides.component';
 import { ModifierComponent } from './modifier/modifier.component';
 
@@ -22,6 +20,6 @@ import { ModifierComponent } from './modifier/modifier.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
   ],
-  declarations: [AccueilComponent, CodifierComponent, ReserverComponent,ParametresComponent, AidesComponent, ModifierComponent, StatistiquesComponent]
+  declarations: [AccueilComponent, ReserverComponent,ParametresComponent, AidesComponent, ModifierComponent, StatistiquesComponent]
 })
 export class HomeModule { }

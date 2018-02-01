@@ -127,16 +127,20 @@
     <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
       <li class=""><a [routerLink]="['/home/accueil']"><i class="icon-home3"></i><span data-i18n="nav.dash.main" class="menu-title">Accueil</span></a>
       </li>
-      <li class=" nav-item"><a href="#"><i class="icon-stack-2"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Codification</span></a>
+      <li class="nav-item"><a href="#"><i class="icon-stack-2"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Codification</span></a>
         <ul class="menu-content">
-          <li><a [routerLink]="['/home/codification']" data-i18n="nav.page_layouts.2_columns" class="menu-item">Reserver/Codifier</a>
+          <li>
+            <a [routerLink]="['/home/codification']" data-i18n="nav.page_layouts.2_columns" class="menu-item">Reserver/Codifier</a>
           </li>
         </ul>
       </li>
-      <li class=""><a [routerLink]="['/home/parametres']"><i class="icon-cog3"></i><span data-i18n="nav.dash.main" class="menu-title">Parametres</span></a>
+      <li class="">
+        <a [routerLink]="['/home/parametres']"><i class="icon-cog3"></i><span data-i18n="nav.dash.main" class="menu-title">Parametres</span></a>
       </li>
-      <li class=""><a [routerLink]="['/home/aides']"><i class="icon-help2"></i><span data-i18n="nav.dash.main" class="menu-title">Aides</span></a>
-      <li class=" nav-item"><a href="#"><i class="icon-stats-dots"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Statistiques</span></a>
+      <li class="">
+        <a [routerLink]="['/home/aides']"><i class="icon-help2"></i><span data-i18n="nav.dash.main" class="menu-title">Aides</span></a>
+      </li>
+      <li class="nav-item"><a href="#"><i class="icon-stats-dots"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Statistiques</span></a>
         <ul class="menu-content">
           <li><a [routerLink]="['/home/statistiques']" data-i18n="nav.page_layouts.2_columns" class="menu-item">Généralites</a>
           </li>
