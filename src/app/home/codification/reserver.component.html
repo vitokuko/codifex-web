@@ -1,0 +1,129 @@
+<!-- Justified With Top Border start -->
+<section id="justified-top-border">
+  <div class="row">
+    <div class="col-xs-12 mt-1">
+      <h4>Codification</h4>
+      <p>.....</p>
+      <hr>
+    </div>
+  </div>
+  <div class="row match-height">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="col-md-3"><h4 class="card-title">Basic Justified Tab</h4></div>
+          <div class="offset-md-7 col-md-2"><button type="button" class="btn btn-outline-success btn-min-width mr-1 mb-1">Quickly</button></div>
+        </div>
+        <div class="card-body">
+          <div class="card-block">
+            <ul class="nav nav-tabs nav-justified">
+              <li class="nav-item" *ngFor="let list of listPavillon">
+                <a class="nav-link" (click)="getAllEtageOfPav(list.id);" id="pavillon-tab" data-toggle="tab"
+                   href="#pavillon" aria-controls="active" aria-expanded="true">{{list.label}}</a>
+              </li>
+            </ul>
+
+            <div class="tab-content px-1 pt-1">
+              <div role="tabpanel" class="tab-pane fade active in" id="pavillon" aria-labelledby="pavillon-tab"
+                   aria-expanded="true">
+                <div class="nav-vertical">
+                  <div role="tabpanel" class="tab-pane active" id="tabVerticalLeft1" aria-expanded="true"
+                       aria-labelledby="baseVerticalLeft-tab1" *ngIf="listEtageOfPav.length==0">
+                    <p>Pas de données</p>
+                  </div>
+                  <ul class="nav nav-tabs nav-left">
+                    <li class="nav-item" *ngFor="let listEtage of listEtageOfPav">
+                      <a class="nav-link" (click)="getAllChambreOfEtage(listEtage.id)" id="baseVerticalLeft-tab1"
+                         data-toggle="tab" aria-controls="tabVerticalLeft1" href="#tabVerticalLeft"
+                         aria-expanded="true">{{listEtage.label}}</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content px-1 mygrid-wrapper-div" *ngIf="listEtageOfPav.length!=0" >
+                    <div role="tabpanel" class="tab-pane active col-lg-4 col-md-6 col-sm-12" id="tabVerticalLeft"
+                         aria-expanded="true" aria-labelledby="baseVerticalLeft-tab1"
+                         *ngFor="let listChambre of listChambreOfEtage">
+                      <a data-toggle="modal" data-id="ISBN564541" class="open-AddBookDialog" href="#addBookDialog" (click)="executeScript(listChambre.id,listChambre.label);" style="text-decoration: none">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="media">
+                              <div class="p-2 media-body text-xs-left">
+                                <h5>Chambre</h5>
+                                <h5 class="text-bold-400">{{listChambre.label}}</h5>
+                                <progress class="progress progress-striped progress-success progress-sm progress-teal mt-1 mb-0" value="{{listChambre.affinite}}" max="100"></progress>
+                              </div>
+                              <div class="p-2 text-xs-center bg-teal media-right media-middle">
+                                <img src="http://freevector.co/wp-content/uploads/2014/03/59805-opened-door-aperture.png" width="70" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Justified With Top Border end -->
+
+<div class="modal fade text-xs-left" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" id="addBookDialog"
+     aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel2"><i class="icon-road2"></i></h4>
+      </div>
+      <div class="modal-body">
+        <!--<input type="text" name="bookId" id="bookId" value=""/>-->
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Réserver par : </h4>
+            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+            <div class="heading-elements">
+              <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                <li><a data-action="close"><i class="icon-cross2"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body collapse in">
+            <div class="card-block">
+              <div class="media-list media-bordered">
+                <div class="media" *ngFor="let list of listEtudiantResChambre">
+                  <p class="media-left">
+                    <img class="media-object" src="../../../assets/app-assets/images/portrait/small/avatar-s-4.png" alt="Generic placeholder image" style="width: 64px;height: 64px;" />
+                  </p>
+                  <div class="media-body">
+                    <h5 class="media-heading">Position : {{list.label}}</h5>
+                    <p>{{list.etudiant.prenom}} {{list.etudiant.nom}}</p>
+                    <p>Dit : {{list.etudiant.username}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary">Réserver</button>
+        <button type="button" class="btn btn-outline-secondary">Codifier</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<a data-toggle="modal" data-id="ISBN564541" title="Add this item"
+                                   class="open-AddBookDialog tag tag-primary" href="#addBookDialog"
+                                   (click)="executeScript(list.id);">Primary Tag</a>-->
+<a id="myObject" (click)="ngOnInit();"></a>
