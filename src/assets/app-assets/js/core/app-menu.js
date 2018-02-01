@@ -37,7 +37,8 @@
         });
       },
 
-      update: function() {
+     //TODO RAPPEL BUG JS FIXED
+     /* update: function() {
         if (this.obj) {
           // Scroll to currently active menu on page load if data-scroll-to-active is true
           if($('.main-menu').data('scroll-to-active') === true){
@@ -56,7 +57,7 @@
           }
           $(".main-menu-content").perfectScrollbar('update');
         }
-      },
+      },*/
 
       enable: function() {
         this.init();
@@ -253,7 +254,7 @@
         callback2.call(menuObj);
         $body.removeClass('changing-menu');
 
-        menuObj.update();
+       // menuObj.update();
       }, 500);
     },
 
@@ -419,9 +420,9 @@
       this.drillDownMenu(currentBreakpoint.name);
     },
 
-    update: function() {
+    /*update: function() {
       this.manualScroller.update();
-    },
+    },*/
 
     reset: function() {
       this.expanded  = false;
