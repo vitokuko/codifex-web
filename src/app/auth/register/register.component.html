@@ -1,3 +1,146 @@
-<p>
-  register works!
-</p>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+<div class="app-content content container-fluid" style="margin-left: -5%;" width="500px">
+  <div class="content-wrapper">
+    <div class="content-header row">
+    </div>
+    <div class="content-body">
+      <section class="flexbox-container">
+        <div class="col-md-4 offset-md-4 col-xs-10 offset-xs-1 box-shadow-2 p-0">
+          <div class="card border-grey border-lighten-3 px-2 py-2 m-0">
+            <div class="card-header no-border">
+              <div class="card-title text-xs-center">
+                <img src="../../../assets/app-assets/images/logo/Online-Campus-Icon.png" width="120"
+                     alt="branding logo">
+              </div>
+              <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2">
+                <span>Create Account</span></h6>
+            </div>
+            <div class="card-body collapse in">
+              <div class="card-block">
+                <form class="form" #myFormRegister="ngForm" (ngSubmit)="inscription(myFormRegister.value)" novalidate>
+                    <div class="form-body">
+                      <h4 class="form-section"><i class="icon-eye6"></i>À propos de</h4>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="userinput1">Prénom</label>
+                            <input type="text" id="userinput1" class="form-control border-primary" placeholder="Prénom" name="prenom" #prenom="ngModel" ngModel required>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="userinput2">Nom</label>
+                            <input type="text" id="userinput2" class="form-control border-primary" placeholder="Nom" name="nom" #nom="ngModel" ngModel required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="userinput3">Telephone</label>
+                            <input type="tel" id="userinput3" class="form-control border-primary" placeholder="Telephone" name="telephone" #telephone="ngModel" ngModel required>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="userinput4">Matricule</label>
+                            <input type="text" id="userinput4" class="form-control border-primary" placeholder="Matricule" name="matricule" #matricule="ngModel" ngModel required>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="userinput6">Date De Naissance</label>
+                        <input class="form-control border-primary" type="date" placeholder="" id="userinput6" name="dateNaissance" #dateNaissance="ngModel" ngModel required>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Lieu De Naissance</label>
+                        <input class="form-control border-primary" id="userinput8" type="text" placeholder="Lieu de naissance" name="lieuNaissance" #lieuNaissance="ngModel" ngModel required>
+                      </div>
+                      <div class="form-group">
+                        <image-upload
+                          url="https://httpbin.org/status/200"
+                          buttonCaption="Photo Profil"
+                          dropBoxMessage="Déposez votre image ici!"
+                          (removed)="onRemoved($event)"
+                          (uploadFinished)="imageFinishedUploading($event)"
+                          (uploadStateChanged)="onUploadStateChanged($event)">
+                        </image-upload>
+                      </div>
+
+                      <h4 class="form-section"><i class="icon-mail6"></i> Information Compte</h4>
+
+                      <div class="form-group">
+                        <label for="userinput5">Email</label>
+                        <input class="form-control border-primary" type="email" placeholder="email" id="userinput5" name="email" #email="ngModel" ngModel required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="userinput6">Username</label>
+                        <input class="form-control border-primary" type="text" placeholder="Username" id="userinput9" name="username" #username="ngModel" ngModel required>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input class="form-control border-primary" id="userinput10" type="password" placeholder="Mot de passe" name="password" #password="ngModel" ngModel required>
+                      </div>
+
+                      <h4 class="form-section"><i class="icon-clipboard4"></i> Etablissement</h4>
+
+                      <div class="form-group">
+                        <label for="projectinput4">Departement</label>
+                        <select id="projectinput4" name="departementId" #departementId="ngModel" (change)="getOptionsOfDepart(departementId.value)" class="form-control" ngModel required>
+                          <option value="" selected="" disabled="">departement</option>
+                          <option value="{{list.id}}" *ngFor="let list of listDepartements">{{list.label}}</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="projectinput5">Options</label>
+                        <select id="projectinput5" name="optionId" #optionId="ngModel" ngModel required class="form-control">
+                          <option value="" selected="" disabled="">Options</option>
+                          <option value="{{list.id}}" *ngFor="let list of listOptionsOfDepart" >{{list.label}}</option>
+                        </select>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="projectinput6">Cycle</label>
+                            <select id="projectinput6" name="cycleId" (change)="getNiveauOfCycle(cycleId.value)" #cycleId="ngModel" ngModel required  class="form-control">
+                              <option value="" selected="" disabled="">Cycle</option>
+                              <option value="{{list.id}}" *ngFor="let list of listCycles">{{list.label}}</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="projectinput7">Niveau</label>
+                            <select id="projectinput7" name="niveauId" #niveauId="ngModel" ngModel required class="form-control">
+                              <option value="" selected="" disabled="">Niveau</option>
+                              <option value="{{list.id}}" *ngFor="let list of listNivOfCycle">{{list.label}}</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-actions right">
+                      <button type="button" (click)="login();" class="btn btn-warning mr-1">
+                        <i class="icon-cross2"></i> Annuler
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        <i class="icon-check2"></i> Soumettre
+                      </button>
+                    </div>
+                </form>
+              </div>
+              <p class="text-xs-center">Already have an account ? <a (click)="login();" class="card-link">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,64 @@
-<a [routerLink]="['/home']">aller dans home</a>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+<div class="app-content content container-fluid" style="margin-left: 110px;">
+  <div class="content-wrapper">
+    <div class="content-header row">
+    </div>
+    <div class="content-body">
+      <section class="flexbox-container">
+        <div class="col-md-4 offset-md-3 col-xs-10 offset-xs-1  box-shadow-2 p-0">
+          <div class="card border-grey border-lighten-3 m-0">
+            <div class="card-header no-border">
+              <div class="card-title text-xs-center">
+                <div class="p-1"><img src="../../../assets/app-assets/images/logo/Online-Campus-Icon.png" width="120" alt="branding logo"></div>
+              </div>
+              <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2"><span>Login with Online Campus</span></h6>
+            </div>
+            <div class="card-body collapse in">
+              <div class="card-block">
+                <form class="form-horizontal form-simple" #myFormAuth="ngForm" (ngSubmit)="authentifier(myFormAuth.value)" novalidate>
+                  <fieldset class="form-group position-relative has-icon-left mb-0">
+                    <input type="text" class="form-control form-control-lg input-lg" id="user-name" name="username" #username="ngModel" placeholder="Entrer votre username" ngModel  required>
+                    <div class="form-control-position">
+                      <i class="icon-head"></i>
+                    </div>
+                  </fieldset>
+                  <br>
+                  <fieldset class="form-group position-relative has-icon-left">
+                    <input type="password" class="form-control form-control-lg input-lg" id="user-password" name="password" placeholder="Entrer votre password" #password="ngModel" ngModel required>
+                    <div class="form-control-position">
+                      <i class="icon-key3"></i>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group row">
+                    <div class="col-md-6 col-xs-12 text-xs-center text-md-left">
+                      <fieldset>
+                        <input type="checkbox" id="remember-me" class="chk-remember">
+                        <label for="remember-me"> Remember Me</label>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6 col-xs-12 text-xs-center text-md-right"><a href="#!" class="card-link">Forgot Password?</a></div>
+                  </fieldset>
+                  <div class="row">
+                    <div class="" style="margin-left: 40%;">
+                      <spinner *ngIf="!working" [size]="50" [tickness]="2"></spinner>
+                    </div>
+                    <div class="col-md-12">
+                      <button *ngIf="working" type="submit" class="btn btn-primary btn-lg btn-block"><i class="icon-unlock2"></i> Login</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="">
+                <p class="float-sm-left text-xs-center m-0"><a href="recover-password.html" class="card-link">Recover password</a></p>
+                <p class="float-sm-right text-xs-center m-0"><a (click)="register();" class="card-link">Sign Up</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<a href="/home/accueil" id="home"></a>
