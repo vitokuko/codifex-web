@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/auth/login']);
   }
 
+  parametres(){
+    this.router.navigate(['/home/parametres']);
+  }
+
   //TODO desactiver le token dans l'api et ajouter l'attribut tel dans la table etudiant
   getUser(id){
     this.dataService.getDataWithId(this.urlEtudiant,id)

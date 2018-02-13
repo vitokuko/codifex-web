@@ -11,7 +11,7 @@
     <div class="navbar-container content container-fluid">
       <div id="navbar-mobile" class="collapse navbar-toggleable-sm">
         <ul class="nav navbar-nav">
-          <li class="nav-item hidden-sm-down"><a class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="icon-menu5">         </i></a></li>
+          <li class="nav-item hidden-sm-down"><a class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="icon-menu5"></i></a></li>
           <li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-link-expand"><i class="ficon icon-expand2"></i></a></li>
         </ul>
         <ul class="nav navbar-nav float-xs-right">
@@ -104,7 +104,7 @@
             </ul>
           </li>
           <li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="../../assets/app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></span><span class="user-name">{{infoCompteEtudiant.prenom}} {{infoCompteEtudiant.nom}}</span></a>
-            <div class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item"><i class="icon-head"></i> Edit Profile</a><a href="#" class="dropdown-item"><i class="icon-mail6"></i> My Inbox</a><a href="#" class="dropdown-item"><i class="icon-clipboard2"></i> Task</a><a href="#" class="dropdown-item"><i class="icon-calendar5"></i> Calender</a>
+            <div class="dropdown-menu dropdown-menu-right"><a (click)="parametres();" class="dropdown-item"><i class="icon-head"></i> Edit Profile</a><a href="#" class="dropdown-item"><i class="icon-mail6"></i> My Inbox</a><a href="#" class="dropdown-item"><i class="icon-clipboard2"></i> Task</a><a href="#" class="dropdown-item"><i class="icon-calendar5"></i> Calender</a>
               <div class="dropdown-divider"></div><a (click)="logout();"  class="dropdown-item"><i class="icon-power3"></i> Logout</a>
             </div>
           </li>
@@ -139,18 +139,6 @@
       </li>
       <li class="">
         <a [routerLink]="['/home/aides']"><i class="icon-help2"></i><span data-i18n="nav.dash.main" class="menu-title">Aides</span></a>
-      </li>
-      <li class="nav-item"><a href="#"><i class="icon-stats-dots"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Statistiques</span></a>
-        <ul class="menu-content">
-          <li><a [routerLink]="['/home/statistiques']" data-i18n="nav.page_layouts.2_columns" class="menu-item">Généralites</a>
-          </li>
-          <li><a [routerLink]="['/home/statistiques']" data-i18n="nav.page_layouts.1_column" class="menu-item">Pavillion A</a>
-          </li>
-          <li><a [routerLink]="['/home/statistiques']" data-i18n="nav.page_layouts.2_columns" class="menu-item">Pavillion B</a>
-          </li>
-          <li><a [routerLink]="['/home/statistiques']" data-i18n="nav.page_layouts.2_columns" class="menu-item">Pavillion C</a>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>

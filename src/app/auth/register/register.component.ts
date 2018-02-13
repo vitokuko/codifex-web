@@ -48,16 +48,16 @@ export class RegisterComponent implements OnInit {
   }
 
   inscription(value: NgForm){
-    console.log(value);
-    this.dataService.addData(this.urlEtudiantCodifexe,value)
+    console.log(value.value);
+    this.dataService.addData(this.urlEtudiantCodifexe,value.value)
       .subscribe(
         data => {
           value.onReset();
           this.popToast('success','Inscription','Successful!!');
           console.log(data);
+          this.router.navigate(['/auth/login']);
         },
         error => {
-          value.onReset();
           console.log(error);
           this.popToast('error','Inscription',error+'!!');
         }

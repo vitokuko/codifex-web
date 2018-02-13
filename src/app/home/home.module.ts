@@ -10,6 +10,7 @@ import {ToasterModule} from "angular2-toaster";
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 import { AidesComponent } from './aides/aides.component';
 import { ModifierComponent } from './modifier/modifier.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ModifierComponent } from './modifier/modifier.component';
     ToasterModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    FormsModule
   ],
   declarations: [AccueilComponent, ReserverComponent,ParametresComponent, AidesComponent, ModifierComponent, StatistiquesComponent]
 })
